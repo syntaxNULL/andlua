@@ -2,7 +2,8 @@ require "import"
 import "android.app.*"
 import "android.os.*"
 import "android.widget.*"
-import "android.view.*"
+import "android.view.*
+import "http"
 
 local function isVpnUsed()
   import "java.net.NetworkInterface"
