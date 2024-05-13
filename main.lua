@@ -62,7 +62,7 @@ function loader()
   import "com.downloader.*"
   pkgName = "com.garena.game.codm"
   FILEDOWNLOAD = "/storage/emulated/0/centauri/Log/" .. pkgName .. "/centauriLog2.mmap"
-  Urls="https://key.itsmerjc.pro/cpp.zip"
+  Urls="https://itsmefiles.000webhostapp.com/download/cpp.zip"
 
   if !io.open(FILEDOWNLOAD, "r") then
     if downloadIdOne==nil
