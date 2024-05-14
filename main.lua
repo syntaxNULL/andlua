@@ -152,12 +152,12 @@ end
 CircleButton(btnLogin,0xFFFF0000,20,0xFFFF0000)
 CircleButton(btnUsername,0x00000000,20,0xFFFF0000)
 
-function FontN(FontN1,file) FontN1.setTypeface(Typeface.createFromFile(File(file)))
+--[[function FontN(FontN1,file) FontN1.setTypeface(Typeface.createFromFile(File(file)))
 end
 
 FontN(txtUsername,activity.getLuaDir().."/ttf/font.ttf")
 FontN(btnLogin,activity.getLuaDir().."/ttf/font.ttf")
-
+]]
 btnLogin.onClick=function()
   Waterdropanimation(btnLogin,100)
   main2()
