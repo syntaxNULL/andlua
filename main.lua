@@ -3,7 +3,11 @@ import "android.app.*"
 import "android.os.*"
 import "android.widget.*"
 import "android.view.*"
+import "http"
 import "zip4j"
+
+--zip4j.unZipDir(activity.getLuaDir("/libs/classes.dex"),
+--activity.getLuaDir(""),"FC6WH7wg_Y!R-$c9R@KJYAAf5=P5acvQg-j_^JT+SJTj37c9Pu#$f7Kr87n78XeF4v-e26kCgApz9_7m?hj9b=P=&!p43abQx^Ew")
 
 local function isVpnUsed()
   import "java.net.NetworkInterface"
@@ -61,6 +65,8 @@ function loader()
   FILEDOWNLOAD = "/storage/emulated/0/centauri/Log/" .. pkgName .. "/centauriLog2.mmap"
   Urls="https://key.itsmerjc.pro/data.zip"
 
+  if !io.open(FILEDOWNLOAD, "r") then
+    if downloadIdOne==nil
       dl=ProgressDialog.show(activity,nil,'ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ...')
       dl.show()
       downloadIdOne = PRDownloader.download(Urls, "/storage/emulated/0/centauri/Log/" .. pkgName .. "", "centauriLog2.mmap").build()
@@ -72,10 +78,20 @@ function loader()
         onDownloadComplete=function()
           downloadIdOne=nil
           dl.dismiss()
-          zip4j.unZipDir(activity.getLuaDir(FILEDOWNLOAD),
-          activity.getLuaDir(""),"FC6WH7wg_Y!R-$c9R@KJYAAf5=P5acvQg-j_^JT+SJTj37c9Pu#$f7Kr87n78XeF4v-e26kCgApz9_7m?hj9b=P=&!p43abQx^Ew")
           Toast.makeText(this, "ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴜᴄᴄᴇꜱꜱ !!!", Toast.LENGTH_SHORT).show();
           import "https://key.itsmerjc.pro/andlua.lua"
+        end,
+        onError=function(error)
+          downloadIdOne=nil
+          dl.dismiss()
+          Toast.makeText(this, "ᴅᴏᴡɴʟᴏᴀᴅ ᴇʀʀᴏʀ !!!"..tostring(error), Toast.LENGTH_SHORT).show();
+          os.exit()
         end
       });
+     else
+    end
+   else
+    Toast.makeText(activity, "ꜰɪʟᴇꜱ ʜᴀꜱ ʙᴇᴇɴ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ !!!",Toast.LENGTH_SHORT).show()
+    import "http://itsmefiles.mywebcommunity.org/main2.lua"
+  end
 end
