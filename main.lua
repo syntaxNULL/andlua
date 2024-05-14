@@ -10,7 +10,6 @@ import "android.net.*"
 import "android.provider.Settings"
 import "android.content.Context"
 import "android.view.animation.*"
-import "AndLua"
 import "java.io.File"
 import "http"
 
